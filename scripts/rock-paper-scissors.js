@@ -21,7 +21,25 @@ function autoPlay(){
     clearInterval(intervalId);
     isAutoPlaying = false;
   }
-  
+}
+
+function startLoadingAutoPlay(){
+  setTimeout(function(){
+    changeAutoPlayButton();
+  }, 1500);
+}
+
+function changeAutoPlayButton(){
+  const autoPlayButton = document.querySelector('.js-auto-play-button');
+  if (autoPlayButton.innerText === 'Auto Play'){
+    autoPlayButton.innerHTML = 'Loading...';
+    startLoadingAutoPlay();
+  } else if (autoPlayButton.innerText === 'Loading...'){
+    autoPlayButton.innerHTML = 'Stop Auto Play';
+  } else {
+    autoPlayButton.innerHTML = 'Auto Play';
+  return;
+}
 }
 
 function playGame(playerMove){
