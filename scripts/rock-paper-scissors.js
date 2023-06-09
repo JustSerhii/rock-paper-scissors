@@ -26,7 +26,7 @@ function autoPlay(){
 function startLoadingAutoPlay(){
   setTimeout(function(){
     changeAutoPlayButton();
-  }, 1500);
+  }, 500);
 }
 
 function changeAutoPlayButton(){
