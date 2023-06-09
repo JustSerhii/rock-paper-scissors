@@ -77,6 +77,22 @@ document.body.addEventListener('keydown', (event) => {
   console.log(event.key);
 })
 
+//keyboard controls
+document.body.addEventListener('keydown', (event) => {
+  if (event.key === 'r'){
+    playGame('Rock');
+  } else if (event.key === 'p'){
+    playGame('Paper');
+  } else if (event.key === 's'){
+    playGame('Scissors');
+  } else if (event.key === 'Enter'){
+    changeAutoPlayButton();
+    autoPlay();
+  } else if (event.key === '0'){
+    resetScore();
+  }
+})
+
 function playGame(playerMove){
   const computerMove = pickComputerMove();
   let result = '';
